@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!-- fashion section start -->
+
+{% for category in categories %}
+
+<div class="fashion_section">
+   <div id="main_slider" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+         
+         <div class="carousel-item active">
+            <div class="container">
+               <h1 class="fashion_taital">{{category.categoryName}}</h1>
+
+
+               <div class="fashion_section_2">
+                  <div class="row">
+                     {% for product in category.product_set.all %}
+
+                     <div class="col-lg-4 col-sm-3">
+                        <div class="box_main">
+                           <h4 class="shirt_text">{{product.productName}}</h4>
+                           <p class="price_text">Price <span style="color: #262626;">kSH {{product.price}}</span></p>
+                           <div class="tshirt_img">
+                              <img src="{{product.productImage.url}}" alt="product image" />
+                           </div>
+                           <div class="btn_main">
+                              <div class="buy_bt"><a href="#">Buy Now</a></div>
+                              <div class="seemore_bt"><a href="{% url 'product' product.id %}">See More</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+
+               
+
+
+               </div>
+            </div>
+
+         </div>
+         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+         </a>
+         <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+         </a>
+      </div>
+   </div>
+
+   {% endfor %}
+
+   <!-- end of section -->
+
+   {% endblock content %}

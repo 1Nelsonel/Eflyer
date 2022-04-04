@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+{% load static %}
+
+<!-- start of the product content -->
+
+<div class="section p-3">
+    <div class="container p-3">
+        <div class="row">
+            <div class="p-4">
+                <h2 class="text-center fw-bold">{{product.productName}}</h2>
+            </div>
+            <div class="col-sm-4">
+                <div>
+                    <img src="{{product.productImage.url}}" alt="product image" />
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div>
+                    <div>
+                        <h3 class="fw-bold">Description</h3>
+                    </div>
+                    <div>
+                        <p class="text-dark">{{product.description}}</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="fw-bold">Categoty</h3>
+                    </div>
+                    <div>
+                        <p class="text-dark">{{product.category}}</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="fw-bold">Sub-Categoty</h3>
+                    </div>
+                    <div>
+                        <p class="text-dark">{{product.subCategory}}</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="fw-bold">Manufucturer</h3>
+                    </div>
+                    <div>
+                        <p class="text-dark">{{product.manufucturer}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    <div>
+                        <h2 class="fw-bold">Price</h2>
+                    </div>
+                    <div>
+                        <p class="text-dark">kSH: {{product.price}}</p>
+                    </div>
+                    <div class="buynow_bt">
+                        <a href="#">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- end of product content -->
+
+
+{% endblock content %}
