@@ -38,8 +38,7 @@
     <!-- fonts -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet"> -->
     <!-- font awesome -->
-    <link rel="stylesheet" type="text/css"
-        href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
     <!--  -->
     <!-- owl stylesheets -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext"
@@ -71,7 +70,9 @@
     <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
 
-    {{ STATIC_URL }}js/jquery.js
+    {% block extrahead %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js" />
+    {% endblock %}
 
     <script>
         function openNav() {
